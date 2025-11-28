@@ -1,0 +1,104 @@
+/***** TRACK HEADER *****/
+.track-container {
+  text-align:center;
+  padding:22px 0 10px;
+}
+.track-title {
+  font-family:'Poppins',sans-serif;
+  font-size:32px;
+  margin-bottom:4px;
+}
+
+/***** STATUS BAR *****/
+.status-bar {
+  background:#d6b084;
+  
+  padding:28px 36px;
+  margin:22px 6%;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Status labels */
+.status-steps {
+  display:flex;
+  justify-content:space-between;
+  font-size:16px;
+  font-weight:600;
+  font-family:'Cormorant Garamond', serif;
+  margin-bottom:14px;
+  flex-wrap:wrap;
+  color:#3d2a1f;
+}
+
+/* Progress line */
+.progress-line {
+  height:5px;
+  background:#ddd;
+  width:86%;
+  margin:0 auto 18px;
+  border-radius:8px;
+  position:relative;
+  overflow:hidden;
+}
+.progress-line::before {
+  content:"";
+  position:absolute;
+  height:100%;
+  width:40%;
+  left:0;
+  background:#76ff03;
+  animation: fillMove 2s ease-out forwards;
+}
+@keyframes fillMove { from{width:0;} to{width:40%;} }
+
+/* Ticks */
+
+
+
+/* Dates row */
+.status-dates {
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+  font-weight:600;
+  font-family:'Cormorant Garamond';
+  flex-wrap:wrap;
+}
+.status-dates div {text-align:center;flex:1;}
+.status-dates small {font-size:12px;font-family:'Poppins';font-weight:500;opacity:0.8;}
+
+/***** PRODUCT PREVIEW *****/
+.product-box {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:white;
+  border:1px solid #888;
+  border-radius:8px;
+  padding:16px 26px;
+  margin:24px 6%;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.cake-side {display:flex;align-items:center;gap:18px;}
+#trackCakeImg {width:100px;height:100px;object-fit:cover;border:1px solid #ccc;}
+#trackCakeName {font-size:18px;font-weight:600;font-family:'Cormorant Garamond';color:#3d2a1f;}
+.price-top {font-size:20px;font-weight:700;color:#76ff03;}
+/* Checkbox Ticks */
+.tick-box {
+  width:22px;height:22px;
+  background:white;
+  border:2px solid #2b8a3e;
+  border-radius:6px;
+  display:flex;justify-content:center;align-items:center;
+  font-size:14px;
+  color:#2b8a3e;
+  position:absolute;
+  top:62px;
+}
+
+.tick1 {left:8%;}
+.tick2 {left:28%;}
+.tick3 {left:50%;}
+.tick4 {left:73%;}
+.tick5 {left:93%;}

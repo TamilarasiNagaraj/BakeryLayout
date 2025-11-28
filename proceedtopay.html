@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bakery Website</title>
+
+<!-- Poppins Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="proceedtopay.css">
+</head>
+<body>
+
+<!-- ---------- TOP BAR ---------- -->
+<div class="top-bar">
+    <p>Free Deliver Above<span class="call"> 999</span> </p>
+    <p>Get <span class="call">25</span>%Off for first order</p>
+   <p class="call call-blink">Call-123-456-789</p>
+</div>
+
+<!-- ---------- NAVBAR ---------- -->
+<nav class="navbar">
+
+    <!-- Logo -->
+   <div class="logo-circle">
+    <span>Bakery</span>
+</div>
+
+    <!-- Search Box -->
+    <div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search product">
+  <i class="fa fa-search" id="searchIcon"></i>
+</div>
+
+      <div class="nav-icons">
+        <img src="Images/pexels-cristian-rojas-8446838.png" class="profile-img"  id="profileIcon">
+<div class="dropdown" id="dropdownMenu">
+          <div class="dropdown-header">My Accounts</div>
+          <a href="myprof.html">Personal Information</a>
+          <a href="invoice.html">My Order</a>
+          <a href="track.html">Tracking Order</a>
+          <a href="password.html">Password Manager</a>
+          <a href="logout.html">Logout</a>
+        </div>
+        <i class="fa-regular fa-heart" onclick="window.location.href='whishlist.html'"></i>
+        <i class="fa-solid fa-cart-shopping" onclick="window.location.href='buy.html'"></i>
+        <i class="fa-regular fa-bell" onclick="window.location.href='home.html'"></i>
+    </div>
+</nav>
+
+<!-- ---------- MENU LINKS ---------- -->
+<div class="menu-links">
+    <a href="home.html" >Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="category.html">Categories</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html" >Blog</a>
+    <a href="contact.html">Contact us</a>
+</div>
+<section class="checkout-container">
+  <!-- LEFT SIDE FORM -->
+  <div class="billing-left">
+    <h2>Billing Details</h2>
+
+    <div class="form-row-2">
+      <div>
+        <label>First Name*</label>
+        <input type="text" placeholder="Ex: John">
+      </div>
+      <div>
+        <label>Last Name*</label>
+        <input type="text" placeholder="Ex: Doe">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Country*</label>
+      <select><option>Select Country</option></select>
+    </div>
+
+    <div class="form-row">
+      <label>Street Address*</label>
+      <input type="text" placeholder="Enter Street Address">
+    </div>
+
+    <div class="form-row-2">
+      <div>
+        <label>City*</label>
+        <select><option>Select City</option></select>
+      </div>
+      <div>
+        <label>State*</label>
+        <select><option>Select State</option></select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Zip Code*</label>
+      <input type="text" placeholder="Enter Zip Code">
+    </div>
+
+    <div class="form-row">
+      <label>Phone*</label>
+      <input type="text" placeholder="Enter Phone Number">
+    </div>
+
+    <div class="form-row">
+      <label>E-Mail*</label>
+      <input type="email" placeholder="Enter E-Mail">
+    </div>
+<div class="form-row">
+  <label>Delivery Address</label>
+  <div class="delivery-option-row">
+
+    <label class="delivery-btn">
+      <input type="radio" name="deliveryAddr" checked>
+      <span><i class="fa-regular fa-circle-dot"></i> Use a different billing address</span>
+    </label>
+
+    <label class="delivery-btn">
+      <input type="radio" name="deliveryAddr">
+      <span><i class="fa-regular fa-circle"></i> Same as shipping address</span>
+    </label>
+
+  </div>
+</div>
+  </div>
+<!-- RIGHT SIDE SUMMARY -->
+  <div class="summary-right">
+    <div class="order-summary-box">
+      <h3>Order Summary</h3>
+      <div class="summary-row"><span>Items</span><span id="sumItems">1</span></div>
+      <div class="summary-row"><span>Subtotal</span><span>₹<span id="sumSub">0</span></span></div>
+      <div class="summary-row"><span>Shipping</span><span>₹0.00</span></div>
+      <div class="summary-row"><span>Taxes</span><span>₹0.00</span></div>
+      <div class="summary-row"><span>Coupon Discount</span><span>-₹<span id="sumCoupon">0</span></span></div>
+    <div class="summary-row total"><span>Total</span><span>₹<span id="sumTotal">0</span></span></div>
+      <button class="proceed-pay-btn" id="checkoutBtn" >Proceed to pay</button>
+    </div>
+  </div>
+  
+</section>
+
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <!-- Left Logo -->
+          <div class="logo-circle1">
+    <span>Bakery</span>
+</div>
+        <!-- Right Side Columns -->
+        <div class="footer-right">
+
+            <div class="footer-col">
+                <p>Customer service</p>
+                <p>My Account</p>
+                <p>Checkup</p>
+                <p>FAQ</p>
+                <p>Return</p>
+            </div>
+
+            <div class="footer-col">
+                <p>Company</p>
+                <p>About us</p>
+                <p>Blogs</p>
+                <p>Contact us</p>
+                <p>Career</p>
+            </div>
+
+            <div class="footer-col">
+                <p>Our information</p>
+                <p>Privacy</p>
+                <p>Terms & Condition</p>
+                <p>Customer Feed back</p>
+            </div>
+
+            <div class="footer-col contact">
+                <p>Mobile: 123-456-789</p>
+                <p>Email_Bakery@gmail.com</p>
+                <p>Address : 12,,north city-001</p>
+
+                <div class="footer-social">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+        <p>© 2025 Bakery. co. All rights reserved.</p>
+        <p><strong>Terms & Conditions | Privacy Policy</strong></p>
+    </div>
+
+</footer>
+<script>
+let item = JSON.parse(localStorage.getItem("buyNowItem"));
+
+// ------ UPDATE SUMMARY INCLUDING COUPON DISCOUNT ------
+function updateSummaryUI() {
+  item = JSON.parse(localStorage.getItem("buyNowItem")); // always load latest
+  if (!item) return;
+
+  let subtotal = item.price * item.qty;
+  let discount = item.coupon || 0;
+  let total = subtotal - discount;
+
+  document.getElementById("sumItems").innerText = item.qty;
+  document.getElementById("sumSub").innerText = subtotal;
+  document.getElementById("sumCoupon").innerText = discount;
+  document.getElementById("sumTotal").innerText = total; // ✅ TOTAL WILL CHANGE NOW
+}
+
+// ------ CHANGE QUANTITY (if using buttons) ------
+function changeQty(v) {
+  if (!item) return;
+  item.qty += v;
+  if (item.qty < 1) item.qty = 1;
+
+  localStorage.setItem("buyNowItem", JSON.stringify(item)); // save updated qty
+  updateSummaryUI();
+}
+
+// ------ APPLY COUPON & RECALCULATE ------
+function applyCoupon() {
+  if (!item) return;
+  const code = document.getElementById("couponInput")?.value.trim();
+
+  if (code === "FIRST25") {
+    item.coupon = 150;
+  } else if (code !== "") {
+    item.coupon = 50;
+    alert("Coupon Applied ✅");
+  }
+
+  localStorage.setItem("buyNowItem", JSON.stringify(item)); // save discount
+  updateSummaryUI();
+}
+
+// ------ REDIRECT TO PAYMENT PAGE ------
+document.querySelector(".proceed-pay-btn")?.addEventListener("click", () => {
+  updateSummaryUI();
+  window.location.href = "proceedtopay.html";
+});
+
+// ✅ Call function on page load so summary updates immediately
+updateSummaryUI();
+document.getElementById("checkoutBtn")?.addEventListener("click", () => {
+  window.location.href = "payment.html";
+});
+
+
+const profilePic = document.getElementById("profileIcon");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    // Toggle dropdown on profile pic click
+    profilePic.addEventListener("click", (e) => {
+      e.stopPropagation(); // prevent event bubbling
+      dropdownMenu.classList.toggle("active");
+    });
+
+    // Close dropdown when clicking anywhere else
+    document.addEventListener("click", (e) => {
+      if (!dropdownMenu.contains(e.target) && e.target !== profilePic) {
+        dropdownMenu.classList.remove("active");
+      }
+    });
+    document.getElementById("searchIcon").addEventListener("click", function () {
+  let text = document.getElementById("searchInput").value.trim().toLowerCase();
+
+  if (text === "cake menu section") {
+    window.location.href = "shop.html";
+  } else if (text === "birthday cake section") {
+    window.location.href = "shopcate.html";
+  } else if (text === "shop categories") {
+    window.location.href = "shopcate.html";
+  } else if (text === "cake menu section") {
+    window.location.href = "search.html";
+  }else if (text === "shopcate.html"){
+    window.location.href = "whishlist.html";}
+  else {
+    alert("No page matched ❗ Try again");
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+ /* ---- HEADER ---- */
+    .account-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      
+    }
+
+    .account-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .profile-pic1 {
+      position: absolute;
+      right: 200px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* ---- LAYOUT ---- */
+    .account-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 100px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ---- LEFT SIDEBAR ---- */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .sidebar button {
+      width: 260px;
+      padding: 23px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 10px;
+      border: 1px solid #080808;
+      background: #d6b084;
+      box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #f2f2f2;
+    }
+
+    .sidebar button.active {
+      background-color: black;
+      color: #fff;
+       border: 1px solid #080808;
+    }
+
+    .sidebar button:hover:not(.active) {
+      background-color: #f2f2f2;
+    }
+
+    /* ---- RIGHT FORM SECTION ---- */
+    .account-form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 30px;
+    }
+
+    .form-group {
+      flex: 1;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+     
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+      border: 1px solid #080808;
+      box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    input::placeholder {
+      color: #ffeaea;
+    }
+
+.form-group1 button{
+ background-color:#d6b084;
+width: 260px;
+      padding: 18px;
+      font-size: 18px;
+
+      border-radius: 10px;
+      border: 1px solid #080808;
+     color: white;
+      box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+
+}
+
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .account-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .profile-pic {
+        right: 20px;
+        top: 10px;
+      }
+
+      .sidebar button {
+        width: 200px;
+      }
+    }

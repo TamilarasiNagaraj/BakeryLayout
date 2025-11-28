@@ -1,0 +1,140 @@
+/***** WISHLIST WRAPPER *****/
+.wish-wrapper {
+  margin:34px 6%;
+}
+
+/***** TABLE HEADER ROW *****/
+.wish-header-row {
+  display:flex;
+  justify-content:space-between;
+  background:#d6b084;
+  border-radius:14px;
+  padding:14px 28px;
+  font-family:'Pacifico';
+  font-size:17px;
+  font-weight:600;
+  flex-wrap:wrap;
+  color:#3d2a1f;
+  text-align:center;
+}
+
+/***** PRODUCT CARD ROW *****/
+.wishlist-card-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:white;
+  
+  border-radius:12px;
+  padding:16px 26px;
+  margin-top:16px;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.cake-left {
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex:2;
+}
+.cake-left img {
+  width:102px;
+  height:102px;
+ 
+  object-fit:cover;
+  border:1px solid #ddd;
+}
+
+.cake-name {
+  font-size:19px;
+  font-weight:600;
+  font-family:'Cormorant Garamond';
+  color:#3d2a1f;
+}
+
+.cake-price {
+  font-size:20px;
+  font-weight:700;
+  color:#3d2a1f;
+  flex:1;
+  text-align:center;
+}
+
+.cake-date {
+  font-size:16px;
+  font-weight:600;
+  font-family:'Cormorant Garamond';
+  flex:1;
+  text-align:center;
+  color:#3d2a1f;
+}
+
+.cake-stock {
+  font-size:16px;
+  font-weight:600;
+  font-family:'Cormorant Garamond';
+  color:#2b8a3e;
+  flex:1;
+  text-align:center;
+}
+
+.move-cart {
+  background:#d6b084;
+  border:none;
+  border-radius:28px;
+  padding:10px 18px;
+  font-family:'Poppins';
+  cursor:pointer;
+  color:white;
+  font-size:14px;
+}
+
+/***** BOTTOM BUTTONS *****/
+.bottom-actions {
+  display:flex;
+  margin-top:26px;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
+#wishLink {
+  background:white;
+ 
+  padding:8px 14px;
+  border-radius:28px;
+  font-size:14px;
+  width:180px;
+}
+
+.copy-btn {
+  background:#d6b084;
+  border:none;
+  border-radius:28px;
+  padding:8px 18px;
+  font-family:'Poppins';
+  cursor:pointer;
+  color:white;
+  font-size:14px;
+}
+
+.clear-text {
+  font-family:'Poppins';
+  font-size:16px;
+  font-weight:600;
+  color:red;
+  margin-left:auto;
+  cursor:pointer;
+}
+
+.add-cart-btn {
+  background:#d6b084;
+  border:none;
+  border-radius:28px;
+  padding:8px 18px;
+  font-family:'Poppins';
+  cursor:pointer;
+  color:white;
+  font-size:14px;
+}

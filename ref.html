@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bakery Website</title>
+
+<!-- Poppins Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+<!-- ---------- TOP BAR ---------- -->
+<div class="top-bar">
+    <p>Free Deliver Above<span class="call"> 999</span> </p>
+    <p>Get <span class="call">25</span>%Off for first order</p>
+   <p class="call call-blink">Call-123-456-789</p>
+</div>
+
+<!-- ---------- NAVBAR ---------- -->
+<nav class="navbar">
+
+    <!-- Logo -->
+   <div class="logo-circle">
+    <span>Bakery</span>
+</div>
+
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" placeholder="Search product">
+        <i class="fa fa-search"></i>
+    </div>
+
+      <div class="nav-icons">
+        <img src="Images/pexels-cristian-rojas-8446838.png" class="profile-img">
+
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-regular fa-bell"></i>
+    </div>
+</nav>
+
+<!-- ---------- MENU LINKS ---------- -->
+<div class="menu-links">
+    <a href="#" >Home</a>
+    <a href="#" class="active">Shop</a>
+    <a href="#">Categories</a>
+    <a href="#" >Gallery</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact us</a>
+</div>
+<section class="bakery-shop-banner-sec">
+    <div class="bakery-shop-banner-wrap">
+        <img src="Images/Homemade pastries and cakes in pastry shop _ Premium AI-generated image 2.png" class="bakery-shop-banner-img" alt="Shop Banner">
+    </div>
+</section>
+<section>
+<h2 style="text-align: center;margin-top: 40px; font-weight: 500;">Cake Menu Section</h2>
+</section>
+<br>
+<br>
+<div class="layout">
+  
+<div class="menu-wrapper">
+
+<!-- LEFT FILTER -->
+<div class="filter-box">
+
+
+
+<!-- Cakes -->
+<div class="filter-section">
+  
+    <h2>Filter Options</h2>
+
+
+    <h3>Cakes</h3>
+    
+    <div class="option-card">
+        <label><input type="checkbox"> Celebration & Birthday Cakes</label>
+        <label><input type="checkbox"> Sponge Cakes</label>
+        <label><input type="checkbox"> Cheesecakes</label>
+        <label><input type="checkbox"> Custom Layer Cakes</label>
+    </div>
+</div>
+  <br> 
+<!-- Price -->
+<div class="filter-section">
+  <h3>Price</h3>
+   
+  <p class="price-range">$56 – $345</p>
+
+  <div class="price-slider">
+    <div class="slider-bar"></div>
+    <div class="slider-circles">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+  <br> 
+<!-- Maintenance -->
+<div class="filter-section">
+    <h3>Maintenance</h3>
+      
+    <div class="option-card">
+        <label><input type="checkbox"> Low</label>
+        <label><input type="checkbox"> High</label>
+        <label><input type="checkbox"> Medium</label>
+    </div>
+</div>
+  <br> 
+<!-- Availability -->
+<div class="filter-section">
+    <h3>Availability</h3>
+      <br>
+    <div class="option-card">
+        <label><input type="checkbox"> In Stock</label>
+        <label><input type="checkbox"> Out Of Stock</label>
+    </div>
+</div>
+  <br> 
+<!-- Ratings -->
+<div class="filter-section">
+    <h3>Ratings</h3>
+      <br>
+    <div class="option-card">
+        <label><input type="checkbox"> 5 star ⭐⭐⭐⭐⭐</label>
+        <label><input type="checkbox"> 4 star & Above</label>
+    </div>
+</div>
+  <br>
+<!-- Submit -->
+<div class="submit-wrapper">
+    <button class="submit-btn">Submit</button>
+</div>
+
+</div>
+
+<!-- MAIN -->
+  <div class="card-container">
+
+    <!-- Card 1 -->
+    <div class="bakery-card">
+        <div class="heart"></div>
+         <img src="Images/Honey Sponge Cake Recipe _ How to Make Honey Sponge Cake 1.png"
+      onclick="openProduct(
+        this.src,
+        'Honey Sponge Cake',
+        349,
+        499,
+        4.8,
+        'Fluffy honey sponge cake baked fresh daily.',
+        ['Layers of soft sponge','Honey flavored','Fresh baked','Perfect for celebration']
+      )">
+        <div class="card-content">
+            <h3>Sponge Cakes</h3>
+            <div class="price-row">
+                <div class="price">$349</div>
+   <div class="add-btn" onclick="addToWishlist(
+  this.closest('.bakery-card').querySelector('img').src,
+  this.closest('.bakery-card').querySelector('.card-content h3').innerText,
+  this.closest('.bakery-card').querySelector('.price-row .price').innerText.replace(/[^0-9.]/g, ''),
+  1,
+  'In Stock'
+)">
+  Add <img src="Images/qde.png" alt="cart">
+</div>
+            </div>
+        </div>
+    
+<div class="buy-bar" onclick="buyNow(this.closest('.bakery-card').querySelector('img'))">Buy now</div>
+
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bakery-card">
+        <div class="heart"></div>
+        <img src="Images/68a4f3a7-00db-4923-9339-e1f666d06a5e 1.png"
+      onclick="openProduct(
+        this.src,
+        'Classic Cheesecake',
+        566,
+        749,
+        4.7,
+        'Rich and creamy cheesecake with smooth cheese layers.',
+        ['Cheese rich layers','Fresh cream frosting','Premium dessert']
+      )">
+        <div class="card-content">
+            <h3>Cheesecakes</h3>
+            <div class="price-row">
+                <div class="price">$566</div>
+    <div class="add-btn" onclick="addToWishlist(
+  this.closest('.bakery-card').querySelector('img').src,
+  this.closest('.bakery-card').querySelector('.card-content h3').innerText,
+  this.closest('.bakery-card').querySelector('.price-row .price').innerText.replace(/[^0-9.]/g, ''),
+  1,
+  'In Stock'
+)">
+  Add <img src="Images/qde.png" alt="cart">
+</div>
+            </div>
+        </div>
+      <div class="buy-bar" onclick="buyNow(document.querySelector('.bakery-card img'))">Buy now</div>
+    </div>
+
+<br>
+    <!-- Card 3 -->
+    <div class="bakery-card">
+        <div class="heart"></div>
+       <img src="Images/French Genoise Cake_ Fluffy Sponge Classic 1.png"
+      onclick="openProduct(
+        this.src,
+        'French Genoise Cake',
+        776,
+        999,
+        4.8,
+        'Classic French airy sponge cake perfect for birthday themes.',
+        ['Airy sponge base','French classic','Fluffy layers']
+      )">
+        <div class="card-content">
+            <h3>Cheesecakes</h3>
+            <div class="price-row">
+                <div class="price">$776</div>
+  <div class="add-btn" onclick="addToWishlist(
+  this.closest('.bakery-card').querySelector('img').src,
+  this.closest('.bakery-card').querySelector('.card-content h3').innerText,
+  this.closest('.bakery-card').querySelector('.price-row .price').innerText.replace(/[^0-9.]/g, ''),
+  1,
+  'In Stock'
+)">
+  Add <img src="Images/qde.png" alt="cart">
+</div>
+            </div>
+        </div>
+        <div class="buy-bar">Buy now</div>
+    </div>
+    
+
+</div>
+<div class="card-container">
+
+    <!-- Card 1 -->
+    <div class="bakery-card">
+        <div class="heart"></div>
+         <img src="Images/This Lemon Cheesecake recipe is a decadent, creamy… 1.png"
+      onclick="openProduct(
+        this.src,
+        'Lemon Cheesecake',
+        747,
+        899,
+        4.8,
+        'Decadent creamy lemon cheesecake with tangy flavor.',
+        ['Tangy lemon','Creamy base','Fresh baked']
+      )">
+        <div class="card-content">
+            <h3>Cheesecakes</h3>
+            <div class="price-row">
+                <div class="price">$747</div>
+    <div class="add-btn" onclick="addToWishlist(
+  this.closest('.bakery-card').querySelector('img').src,
+  this.closest('.bakery-card').querySelector('.card-content h3').innerText,
+  this.closest('.bakery-card').querySelector('.price-row .price').innerText.replace(/[^0-9.]/g, ''),
+  1,
+  'In Stock'
+)">
+  Add <img src="Images/qde.png" alt="cart">
+</div>
+            </div>
+        </div>
+        <div class="buy-bar">Buy now</div>
+    </div>
+<br>
+    <!-- Card 2 -->
+    <div class="bakery-card">
+        <div class="heart"></div>
+        <img src="Images/b20b2c22-d5ac-4f3b-adb7-bd5cc19a7490 1.png"
+      onclick="openProduct(
+        this.src,
+        'Birthday Sponge Cake',
+        445,
+        645,
+        4.5,
+        'Soft and fluffy sponge cake for birthdays.',
+        ['Soft sponge','Honey flavor','Fresh baked','Party delight']
+      )">
+        <div class="card-content">
+            <h3>Sponcecakes</h3>
+            <div class="price-row">
+                <div class="price">$445</div>
+  <div class="add-btn" onclick="addToWishlist(
+  this.closest('.bakery-card').querySelector('img').src,
+  this.closest('.bakery-card').querySelector('.card-content h3').innerText,
+  this.closest('.bakery-card').querySelector('.price-row .price').innerText.replace(/[^0-9.]/g, ''),
+  1,
+  'In Stock'
+)">
+  Add <img src="Images/qde.png" alt="cart">
+</div>
+            </div>
+        </div>
+        <div class="buy-bar">Buy now</div>
+    </div>
+
+<br>
+    <!-- Card 3 -->
+    <div class="bakery-card">
+        <div class="heart"></div>
+          <img src="Images/Délicieux gâteau d'anniversaire avec bougies… (1) 1.png"
+      onclick="openProduct(
+        this.src,
+        'Celebration Birthday Cake',
+        849,
+        999,
+        4.9,
+        'Festive birthday cake with candles.',
+        ['Birthday cake','Candles','Festive look','Delicious layers']
+      )">
+        <div class="card-content">
+            <h3>Birthday Cakes</h3>
+            <div class="price-row">
+                <div class="price">$849</div>
+     <div class="add-btn" onclick="addToWishlist(
+  this.closest('.bakery-card').querySelector('img').src,
+  this.closest('.bakery-card').querySelector('.card-content h3').innerText,
+  this.closest('.bakery-card').querySelector('.price-row .price').innerText.replace(/[^0-9.]/g, ''),
+  1,
+  'In Stock'
+)">
+  Add <img src="Images/qde.png" alt="cart">
+</div>
+            </div>
+        </div>
+        <div class="buy-bar">Buy now</div>
+    </div>
+    
+
+</div>
+<div class="card-container">
+
+    <!-- Card 1 -->
+    <div class="bakery-card">
+        <div class="heart"></div>
+        <img src="Images/a4e46dc5-ea73-4ae6-b695-20db76717c28 1.png"
+      onclick="openProduct(
+        this.src,
+        'Premium Birthday Cake',
+        658,
+        799,
+        4.6,
+        'Premium theme-based birthday cake.',
+        ['Custom theme','Fresh baked','Premium layers']
+      )">
+        <div class="card-content">
+            <h3>Birthday Cakes</h3>
+            <div class="price-row">
+                <div class="price">$658</div>
+  <div class="add-btn" onclick="addToWishlist(
+  this.closest('.bakery-card').querySelector('img').src,
+  this.closest('.bakery-card').querySelector('.card-content h3').innerText,
+  this.closest('.bakery-card').querySelector('.price-row .price').innerText.replace(/[^0-9.]/g, ''),
+  1,
+  'In Stock'
+)">
+  Add <img src="Images/qde.png" alt="cart">
+</div>
+            </div>
+        </div>
+        <div class="buy-bar">Buy now</div>
+    </div>
+<br>
+    <!-- Card 2 -->
+    <div class="bakery-card">
+        <div class="heart"></div>
+        <img src="Images/61fe0155-361b-44de-90ca-d008e579fb82 2.png"
+      onclick="openProduct(
+        this.src,
+        'Custom Layer Cake',
+        398,
+        599,
+        4.4,
+        'Beautiful custom layered cakes.',
+        ['Custom layers','Designer finish']
+      )">
+        <div class="card-content">
+            <h3>CustomLayeredcakes</h3>
+            <div class="price-row">
+                <div class="price">$398</div>
+    <div class="add-btn" onclick="addToWishlist(
+  this.closest('.bakery-card').querySelector('img').src,
+  this.closest('.bakery-card').querySelector('.card-content h3').innerText,
+  this.closest('.bakery-card').querySelector('.price-row .price').innerText.replace(/[^0-9.]/g, ''),
+  1,
+  'In Stock'
+)">
+  Add <img src="Images/qde.png" alt="cart">
+</div>
+            </div>
+        </div>
+        <div class="buy-bar">Buy now</div>
+    </div>
+
+<br>
+    <!-- Card 3 -->
+    <div class="bakery-card">
+        <div class="heart"></div>
+        <img src="Images/0016ebb8-d67c-4e97-88ae-fefa8abda763 2.png"
+      onclick="openProduct(
+        this.src,
+        'Luxury Layer Cake',
+        899,
+        1099,
+        4.9,
+        'Luxury custom layered cake.',
+        ['Premium layers','Elegant design']
+      )">
+        <div class="card-content">
+            <h3>CustomLayeredcakes</h3>
+            <div class="price-row">
+                <div class="price">$899</div>
+  <div class="add-btn" onclick="addToWishlist(
+  this.closest('.bakery-card').querySelector('img').src,
+  this.closest('.bakery-card').querySelector('.card-content h3').innerText,
+  this.closest('.bakery-card').querySelector('.price-row .price').innerText.replace(/[^0-9.]/g, ''),
+  1,
+  'In Stock'
+)">
+  Add <img src="Images/qde.png" alt="cart">
+</div>
+            </div>
+        </div>
+        <div class="buy-bar">Buy now</div>
+    </div>
+    
+
+</div>  
+
+</div>
+
+
+</div>
+</div>
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <!-- Left Logo -->
+          <div class="logo-circle1">
+    <span>Bakery</span>
+</div>
+        <!-- Right Side Columns -->
+        <div class="footer-right">
+
+            <div class="footer-col">
+                <p>Customer service</p>
+                <p>My Account</p>
+                <p>Checkup</p>
+                <p>FAQ</p>
+                <p>Return</p>
+            </div>
+
+            <div class="footer-col">
+                <p>Company</p>
+                <p>About us</p>
+                <p>Blogs</p>
+                <p>Contact us</p>
+                <p>Career</p>
+            </div>
+
+            <div class="footer-col">
+                <p>Our information</p>
+                <p>Privacy</p>
+                <p>Terms & Condition</p>
+                <p>Customer Feed back</p>
+            </div>
+
+            <div class="footer-col contact">
+                <p>Mobile: 123-456-789</p>
+                <p>Email_Bakery@gmail.com</p>
+                <p>Address : 12,,north city-001</p>
+
+                <div class="footer-social">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+        <p>© 2025 Bakery. co. All rights reserved.</p>
+        <p><strong>Terms & Conditions | Privacy Policy</strong></p>
+    </div>
+
+</footer>
+<script>
+
+  
+function openProduct(img, title, price, oldprice, rating, desc, features){
+  localStorage.setItem("productDesc", desc);
+  localStorage.setItem("productFeatures", JSON.stringify(features));
+
+  const url = `view.html?img=${img}&title=${title}&price=${price}&oldprice=${oldprice}&rating=${rating}`;
+  window.location.href = url;
+}
+function addToWishlist(cakeImg, cakeName, cakePrice, cakeQty, stockStatus) {
+  let orderDate = new Date();
+  let formatDate = orderDate.getDate() + " " + 
+      orderDate.toLocaleString('default',{month:'long'}) + " " + 
+      orderDate.getFullYear();
+
+  let wishlist = JSON.parse(localStorage.getItem("cartList")) || [];
+
+  wishlist.push({
+    img: cakeImg,
+    title: cakeName,
+    price: cakePrice,
+    qty: cakeQty,
+    date: formatDate,
+    stock: stockStatus
+  });
+
+  localStorage.setItem("cartList", JSON.stringify(wishlist));
+  alert("Added to Wishlist ✅ " + cakeName);
+  window.location.href = "whishlist.html";
+}
+ 
+ let qty = 1;
+
+// ✅ Buy Now function for clicked card image
+function buyNow(cakeImgElement) {
+  let cakeImg = cakeImgElement.src;
+  let card = cakeImgElement.closest(".bakery-card");
+
+  let cakeName = card.querySelector(".card-content h3")?.innerText || "Unknown Cake";
+  let cakePriceText = card.querySelector(".price-row .price")?.innerText.replace(/[^0-9.]/g, "") || "0";
+  let cakePrice = parseFloat(cakePriceText);
+
+  let orderId = "ORD" + Math.floor(Math.random() * 100000);
+
+  const itemData = {
+    img: cakeImg,
+    title: cakeName,
+    price: cakePrice,
+    qty: qty,
+    orderID: orderId,
+    datePlaced: new Date().toISOString()
+  };
+
+  localStorage.setItem("buyNowItem", JSON.stringify(itemData));
+  window.location.href = "buy.html";
+}
+
+// ✅ Attach Buy Now click to each image
+document.querySelectorAll(".bakery-card img").forEach(img => {
+  img.addEventListener("dblclick", function() {  // double click to avoid clash
+     buyNow(this);
+  });
+});
+
+
+
+</script>
+</body>
+
+</html>

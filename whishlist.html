@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bakery Website</title>
+
+<!-- Poppins Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="whishlist.css">
+</head>
+<body>
+
+<!-- ---------- TOP BAR ---------- -->
+<div class="top-bar">
+    <p>Free Deliver Above<span class="call"> 999</span> </p>
+    <p>Get <span class="call">25</span>%Off for first order</p>
+   <p class="call call-blink">Call-123-456-789</p>
+</div>
+
+<!-- ---------- NAVBAR ---------- -->
+<nav class="navbar">
+
+    <!-- Logo -->
+   <div class="logo-circle">
+    <span>Bakery</span>
+</div>
+
+    <!-- Search Box -->
+     <div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search product">
+  <i class="fa fa-search" id="searchIcon"></i>
+</div>
+     <div class="nav-icons">
+        <img src="Images/pexels-cristian-rojas-8446838.png" class="profile-img"  id="profileIcon">
+<div class="dropdown" id="dropdownMenu">
+          <div class="dropdown-header">My Accounts</div>
+          <a href="myprof.html">Personal Information</a>
+          <a href="invoice.html">My Order</a>
+          <a href="track.html">Tracking Order</a>
+          <a href="password.html">Password Manager</a>
+          <a href="logout.html">Logout</a>
+        </div>
+        <i class="fa-regular fa-heart" onclick="window.location.href='whishlist.html'"></i>
+        <i class="fa-solid fa-cart-shopping" onclick="window.location.href='buy.html'"></i>
+        <i class="fa-regular fa-bell" onclick="window.location.href='home.html'"></i>
+    </div>
+</nav>
+
+<!-- ---------- MENU LINKS ---------- -->
+<div class="menu-links">
+    <a href="home.html" >Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="category.html">Categories</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html" >Blog</a>
+    <a href="contact.html">Contact us</a>
+</div>
+<div class="wish-wrapper">
+
+  <!-- ===== Table Header ===== -->
+  <div class="wish-header-row">
+    <span>Product</span>
+    <span>Names</span>
+    <span>Price</span>
+    <span>Date Added</span>
+    <span>Stock Status</span>
+  </div>
+
+  <!-- ===== Dynamic Items Load Here ===== -->
+  <div id="wishListBody"></div>
+
+  <!-- ===== Bottom Actions ===== -->
+  <div class="bottom-actions">
+    <span>Wishlist link</span>
+    <input id="wishLink" value="">
+    <button class="copy-btn" onclick="copyWishlistLink()">Copy link</button>
+
+    <span class="clear-text" onclick="clearWishlist()">Clear Wishlist</span>
+    <button class="add-cart-btn" onclick="restoreAllToCart()">Add to cart</button>
+  </div>
+
+</div>
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <!-- Left Logo -->
+          <div class="logo-circle1">
+    <span>Bakery</span>
+</div>
+        <!-- Right Side Columns -->
+        <div class="footer-right">
+
+            <div class="footer-col">
+                <p>Customer service</p>
+                <p>My Account</p>
+                <p>Checkup</p>
+                <p>FAQ</p>
+                <p>Return</p>
+            </div>
+
+            <div class="footer-col">
+                <p>Company</p>
+                <p>About us</p>
+                <p>Blogs</p>
+                <p>Contact us</p>
+                <p>Career</p>
+            </div>
+
+            <div class="footer-col">
+                <p>Our information</p>
+                <p>Privacy</p>
+                <p>Terms & Condition</p>
+                <p>Customer Feed back</p>
+            </div>
+
+            <div class="footer-col contact">
+                <p>Mobile: 123-456-789</p>
+                <p>Email_Bakery@gmail.com</p>
+                <p>Address : 12,,north city-001</p>
+
+                <div class="footer-social">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+        <p>© 2025 Bakery. co. All rights reserved.</p>
+        <p><strong>Terms & Conditions | Privacy Policy</strong></p>
+    </div>
+
+</footer>
+
+<script>
+// Load all wishlist items
+window.onload = function() {
+  let wishlist = JSON.parse(localStorage.getItem("cartList")) || [];
+  const body = document.getElementById("wishListBody");
+  body.innerHTML = "";
+
+  if (wishlist.length === 0) {
+    body.innerHTML = "<p style='text-align:center;font-size:19px;margin-top:22px;'>Your wishlist is empty 💔🍩</p>";
+    return;
+  }
+
+  wishlist.forEach((item, index) => {
+    const row = document.createElement("div");
+    row.className = "wishlist-card-row";
+
+    row.innerHTML = `
+      <div class="cake-left">
+        <img src="${item.img}" alt="product image">
+        <span class="cake-name">${item.title}</span>
+      </div>
+
+      <span class="cake-price">₹${(item.price * item.qty).toFixed(2)}</span>
+      <span class="cake-date">${item.date}</span>
+      <span class="cake-stock">${item.stock}</span>
+
+      <button class="move-cart" onclick="restoreToCart(${index})">
+        Add to Cart 
+      </button>
+    `;
+
+    body.appendChild(row);
+  });
+
+  // Save share link
+  document.getElementById("wishLink").value = window.location.href;
+};
+
+// Restore single item to cart
+function restoreToCart(i) {
+  let wishlist = JSON.parse(localStorage.getItem("cartList")) || [];
+  let item = wishlist[i];
+
+  alert("Added to cart ✅ " + item.title);
+  window.location.href = "payment.html";
+}
+
+// Clear wishlist
+function clearWishlist() {
+  localStorage.removeItem("cartList");
+  location.reload();
+}
+
+// Copy wishlist link
+function copyWishlistLink() {
+  let link = document.getElementById("wishLink");
+  link.select();
+  document.execCommand("copy");
+  alert("Wishlist link copied ✅");
+}
+
+// Restore all to cart
+function restoreAllToCart() {
+  let wishlist = JSON.parse(localStorage.getItem("cartList")) || [];
+  if (wishlist.length === 0) return alert("Wishlist empty!");
+
+  alert("All items sent to cart ✅");
+  window.location.href = "payment.html";
+}
+
+const profilePic = document.getElementById("profileIcon");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    // Toggle dropdown on profile pic click
+    profilePic.addEventListener("click", (e) => {
+      e.stopPropagation(); // prevent event bubbling
+      dropdownMenu.classList.toggle("active");
+    });
+
+    // Close dropdown when clicking anywhere else
+    document.addEventListener("click", (e) => {
+      if (!dropdownMenu.contains(e.target) && e.target !== profilePic) {
+        dropdownMenu.classList.remove("active");
+      }
+    });
+    document.getElementById("searchIcon").addEventListener("click", function () {
+  let text = document.getElementById("searchInput").value.trim().toLowerCase();
+
+  if (text === "cake menu section") {
+    window.location.href = "shop.html";
+  } else if (text === "birthday cake section") {
+    window.location.href = "shopcate.html";
+  } else if (text === "shop categories") {
+    window.location.href = "shopcate.html";
+  } else if (text === "cake menu section") {
+    window.location.href = "search.html";
+  }else if (text === "shopcate.html"){
+    window.location.href = "whishlist.html";}
+  else {
+    alert("No page matched ❗ Try again");
+  }
+});
+</script>
+
+</body>
+</html>

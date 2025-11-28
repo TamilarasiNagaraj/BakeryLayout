@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bakery Website</title>
+
+<!-- Poppins Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+<!-- ---------- TOP BAR ---------- -->
+<div class="top-bar">
+    <p>Free Deliver Above<span class="call"> 999</span> </p>
+    <p>Get <span class="call">25</span>%Off for first order</p>
+   <p class="call call-blink">Call-123-456-789</p>
+</div>
+
+<!-- ---------- NAVBAR ---------- -->
+<nav class="navbar">
+
+    <!-- Logo -->
+   <div class="logo-circle">
+    <span>Bakery</span>
+</div>
+
+    <!-- Search Box -->
+   <div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search product">
+  <i class="fa fa-search" id="searchIcon"></i>
+</div>
+
+      <div class="nav-icons">
+        <img src="Images/pexels-cristian-rojas-8446838.png" class="profile-img"  id="profileIcon">
+<div class="dropdown" id="dropdownMenu">
+          <div class="dropdown-header">My Accounts</div>
+          <a href="myprof.html">Personal Information</a>
+          <a href="invoice.html">My Order</a>
+          <a href="track.html">Tracking Order</a>
+          <a href="password.html">Password Manager</a>
+          <a href="logout.html">Logout</a>
+        </div>
+        <i class="fa-regular fa-heart" onclick="window.location.href='whishlist.html'"></i>
+        <i class="fa-solid fa-cart-shopping" onclick="window.location.href='buy.html'"></i>
+        <i class="fa-regular fa-bell" onclick="window.location.href='home.html'"></i>
+    </div>
+</nav>
+
+<!-- ---------- MENU LINKS ---------- -->
+<div class="menu-links">
+    <a href="home.html" >Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="category.html">Categories</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact us</a>
+</div>
+<!-- ========== TOP BAR ========== -->
+<section class="pay-product-bar">
+  <div class="bar-left">
+    <img id="barImg" src="">
+    <div class="cake-name" id="barName"></div>
+  </div>
+  <div class="date" id="barDate"></div>
+  <div class="price">₹<span id="barPrice">0</span></div>
+</section>
+
+<!-- ========== ORDER SUMMARY & PAYMENT SECTION ========== -->
+<section class="pay-main">
+
+  <!-- LEFT: SUMMARY -->
+  <div class="summary-box">
+    <h3>Order Summary</h3>
+    <div class="summary-row"><span>Items</span><span id="sumItems">0</span></span></div>
+    <div class="summary-row"><span>Subtotal</span><span>Rs.<span id="sumSub">0</span></span></div>
+    <div class="summary-row"><span>Shipping</span><span>Rs.0.00</span></div>
+    <div class="summary-row"><span>Taxes</span><span>Rs.0.00</span></div>
+    <div class="summary-row"><span>Coupon Discount</span><span>Rs.<span id="sumCoupon">0</span></span></div>
+    <div class="summary-row total">
+      <span>Total</span>
+      <span class="total-amount">₹<span id="sumTotal">0</span></span>
+    </div>
+  </div>
+<!-- ========== PAYMENT OPTIONS UI (HIDDEN INITIALLY) ========== -->
+<section class="pay-display-wrapper" id="screen1" style="display:none;">
+  <div class="pay-display-box">
+
+    <h3>Payment options</h3>
+<h4 style="text-align: left;">UPI Payment:</h4>
+    <div class="pay-icons-row">
+     <img src="Images/g.webp" onclick="openForm()">
+      <img src="Images/payph.jpg" onclick="openForm()">
+      <img src="Images/paypal.webp" onclick="openForm()">
+    </div>
+
+    <button class="enter-details-btn" onclick="openForm()">Enter a Details</button>
+
+  </div>
+</section>
+
+  <!-- RIGHT: PAYMENT -->
+<div class="payment-dropdown-container">
+
+  <!-- Click to open dropdown -->
+  <div class="dropdown-header" onclick="togglePayDropdown()">
+    <span id="chosenPayment" >Choose payment</span>
+    <i class="fa-solid fa-chevron-up arrow-icon" id="payArrow"></i>
+  </div>
+
+  <!-- Dropdown list -->
+  <div class="dropdown-list" id="payDropdown">
+    <div class="pay-option" onclick="selectPayment('Google Pay')">
+      <span>Google Pay</span>
+      <img src="Images/g.webp">
+    </div>
+
+    <div class="pay-option" onclick="selectPayment('PhonePe')">
+      <span>PhonePe</span>
+      <img src="Images/payph.jpg">
+    </div>
+
+    <div class="pay-option" onclick="selectPayment('PayPal')">
+      <span>PayPal</span>
+      <img src="Images/paypal.webp">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Only this box will show after selecting payment -->
+
+
+
+</section>
+<!-- ===== 1st SCREEN (Payment Icons) ===== -->
+<div class="pay-display-wrapper" id="screen1" style="display:none;">
+  <div class="pay-display-box">
+    <h3>Payment options</h3>
+    <h4 style="text-align:left;">UPI Payment:</h4>
+    <div class="pay-icons-row">
+      <img class="pay-icon" src="Images/g.webp" onclick="selectIcon('Google Pay')">
+      <img class="pay-icon" src="Images/payph.jpg" onclick="selectIcon('PhonePe')">
+      <img class="pay-icon" src="Images/paypal.webp" onclick="selectIcon('PayPal')">
+    </div>
+    <button class="enter-details-btn" onclick="openForm()">Enter a Details</button>
+  </div>
+</div>
+
+<!-- ===== 2nd SCREEN (UPI Form) ===== -->
+<div class="pay-display-wrapper" id="screen2" style="display:none; position:absolute; right:8%; top:32%;">
+  <div class="pay-display-box2">
+
+    <h2>Payment UPI Details</h2>
+
+    <label>Enter Name :</label>
+    <input type="text" id="upiName" placeholder="Enter your name">
+
+    <label>Enter UPI ID :</label>
+    <input type="text" id="upiID" placeholder="example@upi">
+
+    <button class="confirm-btn"  onclick="showSuccess()">Confirm payment</button>
+
+  </div>
+</div>
+<!-- ===== 3rd SCREEN (Success UI) ===== -->
+<div class="success-wrapper" id="screen3" style="display:none; position:absolute; right:8%; top:32%;">
+  <div class="success-box">
+    <div class="success-circle"><i class="fa-solid fa-check"></i></div>
+    <h3 class="success-text">Payment successfully done</h3>
+  </div>
+</div>
+
+<script>
+let paymentChosen = "";
+
+function selectIcon(name){
+  paymentChosen = name; // store which icon clicked
+}
+
+function openForm(){
+  if(paymentChosen === ""){
+    alert("Please select any UPI icon first!");
+  } else {
+    document.getElementById("screen1").style.display = "none";
+    document.getElementById("screen2").style.display = "block";
+  }
+}
+
+function confirmPayment(){
+  let name = document.getElementById("upiName").value;
+  let upi = document.getElementById("upiID").value;
+
+  if(name === "" || upi === ""){
+    alert("Please enter all details!");
+  } else {
+    alert("Payment Successful ✅ using " + paymentChosen);
+  }
+}
+
+
+// Load selected cake data
+let item = JSON.parse(localStorage.getItem("buyNowItem"));
+
+if(item){
+  // TOP BAR
+  document.getElementById("barImg").src = item.img;
+  document.getElementById("barName").innerText = item.title;
+  document.getElementById("barPrice").innerText = item.price * item.qty;
+
+  // SYSTEM DATE
+  let d = new Date();
+  document.getElementById("barDate").innerText = d.getDate() + " " + d.toLocaleString('default',{month:'long'}) + " " + d.getFullYear();
+
+  // SUMMARY BOX
+  let subtotal = item.price * item.qty;
+  let discount = item.coupon || 0;
+  let total = subtotal - discount;
+
+  document.getElementById("sumItems").innerText = item.qty;
+  document.getElementById("sumSub").innerText = subtotal;
+  document.getElementById("sumCoupon").innerText = discount;
+  document.getElementById("sumTotal").innerText = total;
+}
+
+// BUTTON ACTION
+function payNow(){
+  let mode = document.getElementById("paymentMode").value;
+  item.payMode = mode;
+  localStorage.setItem("buyNowItem", JSON.stringify(item));
+  window.location.href = "payment.html";
+}
+
+function togglePayDropdown(){
+  let list = document.getElementById("payDropdown");
+  let arrow = document.getElementById("payArrow");
+
+  if(list.style.display === "block"){
+    list.style.display = "none";
+    arrow.classList.remove("fa-chevron-down");
+    arrow.classList.add("fa-chevron-up");
+  } else {
+    list.style.display = "block";
+    arrow.classList.remove("fa-chevron-up");
+    arrow.classList.add("fa-chevron-down");
+  }
+}
+
+function selectPayment(name){
+  document.getElementById("chosenPayment").innerText = name;
+  document.getElementById("payDropdown").style.display = "none";
+  document.getElementById("payArrow").classList.remove("fa-chevron-up");
+  document.getElementById("payArrow").classList.add("fa-chevron-down");
+
+  // ✅ Show payment options card ONLY
+  document.getElementById("screen1").style.display = "block";
+
+  // Save selected payment
+  let item = JSON.parse(localStorage.getItem("buyNowItem")) || {};
+  item.payMode = name;
+  localStorage.setItem("buyNowItem", JSON.stringify(item));
+}
+
+function openDetailsPage(){
+  alert("Open details page now!");
+  window.location.href = "paymentdetails.html";
+}
+
+function openForm() {
+  document.getElementById("screen1").style.display = "none"; // hide 1st
+  document.getElementById("screen2").style.display = "block"; // show 2nd
+}
+
+function confirmPayment() {
+  let name = document.getElementById("upiName").value;
+  let upi = document.getElementById("upiID").value;
+
+  if (name === "" || upi === "") {
+    alert("Please enter all details!");
+  } else {
+    alert("Payment Successful ✅");
+  }
+}
+
+function showSuccess(){
+  let name = document.getElementById("upiName").value;
+  let upi = document.getElementById("upiID").value;
+
+  if(name === "" || upi === ""){
+    alert("Please enter all details!");
+  } else {
+    // ✅ HIDE both screens
+    document.getElementById("screen1").style.display = "none";
+    document.getElementById("screen2").style.display = "none";
+
+    // ✅ SHOW success screen
+    document.getElementById("screen3").style.display = "block";
+
+    // ✅ Redirect after 2 sec
+    setTimeout(function(){
+      window.location.href = "invoice.html";
+    }, 2000);
+  }
+}
+
+const profilePic = document.getElementById("profileIcon");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    // Toggle dropdown on profile pic click
+    profilePic.addEventListener("click", (e) => {
+      e.stopPropagation(); // prevent event bubbling
+      dropdownMenu.classList.toggle("active");
+    });
+
+    // Close dropdown when clicking anywhere else
+    document.addEventListener("click", (e) => {
+      if (!dropdownMenu.contains(e.target) && e.target !== profilePic) {
+        dropdownMenu.classList.remove("active");
+      }
+    });
+    document.getElementById("searchIcon").addEventListener("click", function () {
+  let text = document.getElementById("searchInput").value.trim().toLowerCase();
+
+  if (text === "cake menu section") {
+    window.location.href = "shop.html";
+  } else if (text === "birthday cake section") {
+    window.location.href = "shopcate.html";
+  } else if (text === "shop categories") {
+    window.location.href = "shopcate.html";
+  } else if (text === "cake menu section") {
+    window.location.href = "search.html";
+  }else if (text === "shopcate.html"){
+    window.location.href = "whishlist.html";}
+  else {
+    alert("No page matched ❗ Try again");
+  }
+});
+</script>
+
+</body>
+</html>

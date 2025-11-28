@@ -1,0 +1,95 @@
+/* ===== My Account Section ===== */
+    .account-section {
+      background-color: #f5f2f3;
+      padding: 60px 100px;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .account-title {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 40px;
+    }
+
+    .account-container {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .account-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sidebar-btn {
+      width: 380px;
+      padding: 30px 60px;
+      background:#d6b084;;
+      border: 1px solid #111;
+      border-radius: 10px;
+      font-size:20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: #faf1f1;    }
+.sidebar-btn.active {
+      background-color: black;
+      color: #fff;
+       border: 1px solid #080808;
+    }
+.sidebar-btn:hover:not(.active) {
+      background-color: #f2f2f2;
+    }
+    /* ===== Logout Section ===== */
+    .logout-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 25px;
+      width: 450px;
+    }
+
+    .logout-content h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .logout-content p {
+      font-size: 20px;
+      color: #333;
+    }
+
+    .logout-btn {
+      padding: 25px 50px;
+      background-color: #d6b084;;
+      color: #faf1f1;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      transition: 0.3s ease;
+    }
+
+   
+    @media (max-width: 900px) {
+      .account-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .logout-content {
+        align-items: center;
+        text-align: center;
+      }
+    }
